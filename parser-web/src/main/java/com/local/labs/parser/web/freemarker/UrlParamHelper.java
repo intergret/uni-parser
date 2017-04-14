@@ -1,4 +1,4 @@
-package com.local.labs.parser.web;
+package com.local.labs.parser.web.freemarker;
 
 import java.util.List;
 

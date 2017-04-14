@@ -1,11 +1,13 @@
-package com.local.labs.parser.web;
+package com.local.labs.parser.web.freemarker;
+
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
+
+import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
 import freemarker.template.SimpleHash;
-import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
 public class CustomFreeMarkerView extends FreeMarkerView {
 

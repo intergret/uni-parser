@@ -90,12 +90,12 @@
             <dependency>
                 <groupId>com.local.labs</groupId>
                 <artifactId>parser-common</artifactId>
-                <version>${crawler.version}</version>
+                <version>${parser.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.local.labs</groupId>
                 <artifactId>parser-dao</artifactId>
-                <version>${crawler.version}</version>
+                <version>${parser.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

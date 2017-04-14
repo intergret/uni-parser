@@ -13,7 +13,7 @@
         <module>parser-common</module>
         <module>parser-dao</module>
         <module>parser-service</module>
-        <module>parser-core</module>
+        <module>parser-engine</module>
         <module>parser-web</module>
     </modules>
 
@@ -95,6 +95,11 @@
             <dependency>
                 <groupId>com.local.labs</groupId>
                 <artifactId>parser-dao</artifactId>
+                <version>${parser.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.local.labs</groupId>
+                <artifactId>parser-service</artifactId>
                 <version>${parser.version}</version>
             </dependency>
         </dependencies>

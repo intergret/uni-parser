@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $(".dropdown").hover(
+        function(){
+            $(this).find(".dropdown-menu").addClass("display-inline");
+        },
+        function(){
+            $(this).find(".dropdown-menu").removeClass("display-inline");
+        }
+    );
+});

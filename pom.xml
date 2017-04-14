@@ -102,6 +102,11 @@
                 <artifactId>parser-service</artifactId>
                 <version>${parser.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.local.labs</groupId>
+                <artifactId>parser-engine</artifactId>
+                <version>${parser.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

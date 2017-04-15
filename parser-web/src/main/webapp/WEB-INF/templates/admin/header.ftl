@@ -20,10 +20,10 @@
 <div class="container">
     <ul class="nav nav-tabs">
         <li class="dropdown" data-dropdown="dropdown">
-            <a href="/admin/rule/skeleton">添加规则</a>
+            <a href="/admin/rule/index">管理规则</a>
         </li>
         <li class="dropdown" data-dropdown="dropdown">
-            <a href="/admin/rule/index">管理规则</a>
+            <a href="/admin/rule/skeleton">添加规则</a>
         </li>
         <form id="ruleSearch" action="/admin/rule/index" method="get" style="text-align:right">
             <input type="text" name="searchWord" placeholder="Search Rule" tabindex="1"/>

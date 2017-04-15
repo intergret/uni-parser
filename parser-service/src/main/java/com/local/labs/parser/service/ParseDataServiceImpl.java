@@ -1,6 +1,8 @@
 package com.local.labs.parser.service;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,8 @@ import com.local.labs.parser.common.serializer.JsonSerializer;
 @Service
 public class ParseDataServiceImpl implements ParseDataService {
 
-  public static final String KEY_FORMAT = "ParseData_%s";
+  private static final Logger LOG = LoggerFactory.getLogger(ParseDataServiceImpl.class);
+  private static final String KEY_FORMAT = "ParseData_%s";
 
   @Autowired
   private JsonSerializer serializer;
@@ -41,6 +44,6 @@ public class ParseDataServiceImpl implements ParseDataService {
     String urlMd5 = DigestUtils.md5Hex(url);
     String parseDataStr = serializer.serialize(parseData);
     redisCache.set(getKey(urlMd5), parseDataStr);
-    System.out.println("Store parseData to redis " + urlMd5);
+    LOG.info("Store {} parseData to redis {}", url, urlMd5);
   }
 }

@@ -23,7 +23,7 @@ public abstract class AbstractParser implements Parser {
 
   @Override
   public ParseData parse(ParserTask task) throws IOException {
-    System.out.println("Parser Begin " + task.getUrl());
+    LOG.info("Parser begin {}", task.getUrl());
     RuleTree ruleTree = rulesLoader.loadRuleByTask(task);
     if (ruleTree == null || ruleTree.getRule() == null) {
       LOG.info("failed to load parse rule for {}", task.getUrl());

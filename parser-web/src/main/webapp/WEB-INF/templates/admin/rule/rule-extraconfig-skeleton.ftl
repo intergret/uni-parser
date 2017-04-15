@@ -258,9 +258,9 @@
                         <a class="btn btn-primary" href="/admin/rule/prop/${prop.id}#Property">返回Prop</a>
                     </td>
                     <td style="text-align:right">
-                        <button type="submit" class="btn btn-primary" onClick="submitAddExtraConfig('prop')"
+                        <button type="submit" class="btn btn-primary" onClick="submit('prop')"
                                 style="margin-right:15px">
-                            Submit And Add Prop
+                            Submit
                         </button>
                         <button type="submit" class="btn btn-primary" onClick="submitAddExtraConfig('extraConfig')"
                                 style="margin-right:15px">

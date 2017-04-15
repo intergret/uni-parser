@@ -2,15 +2,6 @@ package com.local.labs.parser.web.controller;
 
 import java.io.IOException;
 
-import com.local.labs.parser.common.model.crawler.HttpMethod;
-import com.local.labs.parser.common.model.parser.ParseData;
-import com.local.labs.parser.common.model.parser.ParserTask;
-import com.local.labs.parser.common.model.parser.rule.Rule;
-import com.local.labs.parser.common.model.parser.rule.RuleTestCase;
-import com.local.labs.parser.common.serializer.JsonSerializer;
-import com.local.labs.parser.engine.core.TextParser;
-import com.local.labs.parser.service.RuleService;
-import com.local.labs.parser.web.consts.PageConst;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.local.labs.parser.common.model.crawler.HttpMethod;
+import com.local.labs.parser.common.model.parser.ParseData;
+import com.local.labs.parser.common.model.parser.ParserTask;
+import com.local.labs.parser.common.model.parser.rule.Rule;
+import com.local.labs.parser.common.model.parser.rule.RuleTestCase;
+import com.local.labs.parser.common.serializer.JsonSerializer;
+import com.local.labs.parser.engine.core.TextParser;
+import com.local.labs.parser.service.RuleService;
+import com.local.labs.parser.web.consts.PageConst;
 
 /**
  * Author: Xing Wang <wangxing.bjtu@gmail.com>
@@ -94,12 +95,14 @@ public class ToolController {
     task.setRefer(testRefer);
     task.setContent(testContent);
 
-    String parseRule;
+    String parseRule = "";
     String parseResult;
     try {
       ParseData parseData = textParser.parse(task);
       parseResult = serializer.serializeWithPretty(parseData);
-      parseRule = serializer.serializeWithPretty(parseData.getRule());
+      if (parseData.getRule() != null) {
+        parseRule = serializer.serializeWithPretty(parseData.getRule());
+      }
     } catch (IOException e) {
       parseRule = e.toString();
       parseResult = e.toString();

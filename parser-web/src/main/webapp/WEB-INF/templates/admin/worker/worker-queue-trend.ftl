@@ -1,7 +1,7 @@
 <#include "../header.ftl">
 <#import "/spring.ftl" as spring/>
 <#import "../../macros/pagination.ftl" as pagination>
-<script type="text/javascript" src="http://s.wdjimg.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="/admin/static/js/jquery.jqplot.min.js"></script>
 <#if (queueLengthList?size <= 0)>
     <table class="table table-bordered table-striped">
         <tr>

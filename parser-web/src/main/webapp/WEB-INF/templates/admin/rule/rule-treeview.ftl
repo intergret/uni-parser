@@ -25,7 +25,7 @@
 </style>
 
 <body>
-<script src="http://static.wdjimg.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script src="/admin/static/js/d3.min.js"></script>
 <script>
     var QUERYSTRING_PATTERN_PREFIX = '[\\?\\&\\#]';
     var QUERYSTRING_PATTERN_SUFFIX = '=([^&]*)';

@@ -67,7 +67,7 @@
             <th>标签名</th>
             <th>节点类型</th>
             <th>父节点</th>
-            <th>查看</th>
+            <th>详情</th>
             </thead>
             <#list nodeList as node>
                 <tr>

@@ -159,7 +159,7 @@
                     <td>
                         <table class="table table-bordered table-striped">
                             <tr>
-                                <td><span class="httpMethod">请求方式(httpMethod):</span></td>
+                                <td><span class="httpMethod">请求类型(httpMethod):</span></td>
                                 <td>
                                     <select name="httpMethod">
                                         <option value="" selected="selected"></option>
@@ -244,8 +244,8 @@
                 <th>解释器类型</th>
                 <th>条件</th>
                 <th>选项</th>
-                <th>前置配置项</th>
-                <th>查看</th>
+                <th>前置配置项ID</th>
+                <th>详情</th>
                 <th>删除</th>
             </tr>
             </thead>

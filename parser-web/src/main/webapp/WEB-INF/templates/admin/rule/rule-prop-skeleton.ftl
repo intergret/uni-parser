@@ -116,7 +116,7 @@
             <td>导出类型</td>
             <th>是否必须</th>
             <td>是否为多个</td>
-            <th>查看</th>
+            <th>详情</th>
             </thead>
             <#list propList as prop>
                 <tr>
@@ -191,7 +191,7 @@
                     <td>
                         <table class="table table-bordered table-striped">
                             <tr>
-                                <td><span class="httpMethod">请求方式(httpMethod):</span></td>
+                                <td><span class="httpMethod">请求类型(httpMethod):</span></td>
                                 <td>
                                     <select name="httpMethod">
                                         <option value="" selected="selected"></option>

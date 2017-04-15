@@ -64,7 +64,7 @@
                 </#if>
                 </tr>
                 <tr>
-                    <td><span class="testHttpMethod">请求方式:</span></td>
+                    <td><span class="testHttpMethod">请求类型:</span></td>
                     <td>
                         <select id="testHttpMethod" name="testHttpMethod" onchange="toggleTestSetting();">
                         <#list httpMethodStrList as httpMethodStr>

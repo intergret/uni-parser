@@ -151,12 +151,12 @@ function activatePropHelp() {
 
     $(".resultType").tooltip({
         placement : 'bottom',
-        title: 'Prop的值的类型，常见的是text；如果Prop需要作为node的唯一标识，则设为key；如果Prop的值是一个link，则设为link，同时配置link的请求方式等相关配置项'
+        title: 'Prop的值的类型，常见的是text；如果Prop需要作为node的唯一标识，则设为key；如果Prop的值是一个link，则设为link，同时配置link的请求类型等相关配置项'
     });
     $('.resultType').tooltip('toggle');
 
     $(".httpMethod").tooltip({
-        title: '仅在resultType为link时需要设置，表示link的请求方式'
+        title: '仅在resultType为link时需要设置，表示link的请求类型'
     });
     $('.httpMethod').tooltip('toggle');
 
@@ -213,7 +213,7 @@ function activateTestHelp() {
     $('.testUrl').tooltip('toggle');
 
     $(".testHttpMethod").tooltip({
-        title: '测试url的请求方式'
+        title: '测试url的请求类型'
     });
     $('.testHttpMethod').tooltip('toggle');
 

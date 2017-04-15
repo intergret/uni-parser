@@ -99,12 +99,6 @@
                 <input type="hidden" name="_method" value="delete"/>
                 <button type="submit" class="btn btn-danger" onClick="return confirm('确定删除吗?');">删除</button>
             </form>
-            <form id="ruleCopy" action="/admin/rule/${rule.id}/copy" method="post" style="display:inline">
-                <button type="submit" class="btn btn-primary" onClick="return confirm('确定复制吗?');">复制</button>
-            </form>
-            <form id="ruleExport" action="/admin/rule/${rule.id}/export" method="post" style="display:inline">
-                <button type="submit" class="btn btn-primary" onClick="return confirm('确定导出吗?');">导出</button>
-            </form>
             <form id="ruleTest" action="/admin/rule/${rule.id}/test#RuleTest" method="get" style="display:inline">
                 <button type="submit" class="btn btn-primary" style="margin-right:15px">测试</button>
             </form>
@@ -130,7 +124,7 @@
                 <th>标签名</th>
                 <th>节点类型</th>
                 <th>父节点ID</th>
-                <th>查看</th>
+                <th>详情</th>
                 <th>删除</th>
             </tr>
             </thead>

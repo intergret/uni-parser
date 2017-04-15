@@ -125,7 +125,7 @@
                 <td>
                     <table class="table table-bordered table-striped">
                         <tr>
-                            <td style="width:30%">请求方式(httpMethod):</td>
+                            <td style="width:30%">请求类型(httpMethod):</td>
                             <td>${prop.httpMethod!""}</td>
                         </tr>
                         <tr>
@@ -201,7 +201,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="refExtraConfigId">前置配置项(refExtraConfigId):</span></td>
+                    <td><span class="refExtraConfigId">前置配置项ID(refExtraConfigId):</span></td>
                     <td>
                         <select name="refExtraConfigId">
                         <#list refExtraConfigStrList as refExtraConfigStr>

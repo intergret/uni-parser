@@ -351,21 +351,6 @@ public class RuleController {
     return new ModelAndView("redirect:/admin/rule/extraConfig/skeleton#AddExtraConfig", model);
   }
 
-  @RequestMapping(value = "/rule/prop", method = RequestMethod.DELETE)
-  public ModelAndView batchdDeletePropAction(final ModelMap model,
-      @RequestParam(value = "ruleId", required = true) final Long ruleId,
-      @RequestParam(value = "nodeId", required = true) final Long nodeId,
-      @RequestParam(value = "propIds", required = true) final String propIds) {
-    String[] propIdList = propIds.split(",");
-    for (String propId : propIdList) {
-      Prop prop = propService.get(Long.valueOf(propId.trim()));
-      if (prop != null) {
-        propService.delete(prop);
-      }
-    }
-    return new ModelAndView("redirect:/admin/rule/node/" + nodeId + "#Node", model);
-  }
-
   @RequestMapping(value = "/rule/prop/{propId:.+}", method = RequestMethod.DELETE)
   public ModelAndView deletePropAction(final ModelMap model, @PathVariable final Long propId,
       @RequestParam(value = "ruleId", required = true) final Long ruleId,

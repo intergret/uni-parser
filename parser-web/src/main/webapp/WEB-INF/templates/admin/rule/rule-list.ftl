@@ -63,8 +63,9 @@
                 <th>解析类型</th>
                 <th>页面类型</th>
                 <th>状态</th>
-                <th>查看</th>
-                <th>操作</th>
+                <th>详情</th>
+                <th>测试</th>
+                <th>删除</th>
             </tr>
         </thead>
         <#if (rules?size <= 0)>
@@ -83,26 +84,15 @@
                         </form>
                     </td>
                     <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-list">Tool</span>
-                            </button>
-                            <ul class="dropdown-menu js-rule-action" role="menu" data-rule-id="${rule.id}">
-                                <li><a href="/admin/rule/treeview?ruleId=${rule.id}" target="_blank">概览</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#" data-action="copy">复制</a></li>
-                                <li><a href="#" data-action="export">导出</a></li>
-                                <li><a href="/admin/rule/${rule.id}/test#RuleTest">测试</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#" data-action="delete">删除</a></li>
-                            </ul>
-                            <form class="js-form-delete" action="/admin/rule/${rule.id}" method="post" style="display: none">
-                                <input type="hidden" name="page" value="${page}"/>
-                                <input type="hidden" name="_method" value="delete"/>
-                            </form>
-                            <form class="js-form-copy" action="/admin/rule/${rule.id}/copy" method="post" style="display: none"></form>
-                            <form class="js-form-export" action="/admin/rule/${rule.id}/export" method="post" style="display: none"></form>
-                        </div>
+                        <form id="ruleTest" action="/admin/rule/${rule.id}/test#RuleTest" method="get" style="display:inline">
+                            <button type="submit" class="btn btn-primary">测试</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form id="ruleDelete" action="/admin/rule/${rule.id}" method="post" style="display:inline">
+                            <input type="hidden" name="_method" value="delete"/>
+                            <button type="submit" class="btn btn-danger" onClick="return confirm('确定删除吗?');">删除</button>
+                        </form>
                     </td>
                 </tr>
             </#list>

@@ -187,7 +187,7 @@
                     <th>导出类型</th>
                     <th>是否必须</th>
                     <th>是否为多个</th>
-                    <th>查看</th>
+                    <th>详情</th>
                     <th>删除</th>
                 </tr>
                 </thead>
@@ -220,17 +220,6 @@
                 <tr>
                     <td colspan="10" style="text-align:center">
                         <a href="/admin/rule/prop/skeleton?nodeId=${node.id}#AddProp"><h4>新增Prop</h4></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="10" style="text-align:center">
-                        <form id="propCopy" action="/admin/rule/prop" method="post" style="display:inline">
-                            <input type="text" name="propIds" placeholder="PropId1,PropId2,..."/>
-                            <input id="ruleId" name="ruleId" type="hidden" value='${rule.id}'/>
-                            <input id="nodeId" name="nodeId" type="hidden" value='${node.id}'/>
-                            <input type="hidden" name="_method" value="delete"/>
-                            <button type="submit" class="btn btn-primary" style="margin-right:15px">删除Prop</button>
-                        </form>
                     </td>
                 </tr>
             </table>

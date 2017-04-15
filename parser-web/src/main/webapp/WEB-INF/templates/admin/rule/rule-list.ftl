@@ -92,7 +92,6 @@
                                 <li class="divider"></li>
                                 <li><a href="#" data-action="copy">复制</a></li>
                                 <li><a href="#" data-action="export">导出</a></li>
-                                <li><a href="/admin/rule/${rule.id}/validate" data-action="validate">检验</a></li>
                                 <li><a href="/admin/rule/${rule.id}/test#RuleTest">测试</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#" data-action="delete">删除</a></li>

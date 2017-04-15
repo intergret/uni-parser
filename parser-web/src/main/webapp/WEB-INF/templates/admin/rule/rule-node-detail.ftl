@@ -104,13 +104,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><span class="inputOption">输入选项(inputOption):</span></td>
-                                <td>
-                                    <input type="text" name="inputOption" value='${nodeExtraConfig.inputOption!""}' style="width:98%">
-                                    <span id="inputOptionTips"></span>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td style="width:30%"><span class="extractorType">类型(extractorType):</span></td>
                                 <td>
                                     <select id="extractorType" name="extractorType" onchange="toggleExtractorSetting();">

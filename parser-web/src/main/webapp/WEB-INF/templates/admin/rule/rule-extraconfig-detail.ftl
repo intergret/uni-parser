@@ -173,13 +173,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="inputOption">输入选项(inputOption):</span></td>
-                    <td>
-                        <input type="text" name="inputOption" value='${extraConfig.inputOption!""}' style="width:95%">
-                        <span id="inputOptionTips"></span>
-                    </td>
-                </tr>
-                <tr>
                     <td><span class="transformType">值转换类型(transformType):</span></td>
                     <td>
                         <select name="transformType">

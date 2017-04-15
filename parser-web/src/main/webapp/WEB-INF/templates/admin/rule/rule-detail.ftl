@@ -105,9 +105,6 @@
             <form id="ruleExport" action="/admin/rule/${rule.id}/export" method="post" style="display:inline">
                 <button type="submit" class="btn btn-primary" onClick="return confirm('确定导出吗?');">导出</button>
             </form>
-            <form id="ruleTest" action="/admin/rule/${rule.id}/validate" method="get" style="display:inline">
-                <button type="submit" class="btn btn-primary">检验</button>
-            </form>
             <form id="ruleTest" action="/admin/rule/${rule.id}/test#RuleTest" method="get" style="display:inline">
                 <button type="submit" class="btn btn-primary" style="margin-right:15px">测试</button>
             </form>

@@ -3,9 +3,6 @@ $(function () {
         var action = evt.originalEvent.srcElement.dataset.action;
         var $ctn = $(evt.currentTarget).parent();
         switch (action) {
-            case 'validate':
-                $()
-                break;
             case 'test':
                 break;
             case 'copy':

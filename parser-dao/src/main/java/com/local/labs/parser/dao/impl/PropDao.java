@@ -11,9 +11,9 @@ public interface PropDao {
 
   void update(Prop prop);
 
-  boolean exists(Map<String, Object> where);
+  boolean exists(Map<String,Object> where);
 
-  int delete(Map<String, Object> where);
+  int delete(Map<String,Object> where);
 
   List<Prop> listByNode(Long nodeId);
 

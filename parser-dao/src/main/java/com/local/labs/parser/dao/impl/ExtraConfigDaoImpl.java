@@ -21,8 +21,7 @@ import com.local.labs.parser.dao.mapper.ExtraConfigRowMapper;
 public class ExtraConfigDaoImpl extends AbstractDao implements ExtraConfigDao {
 
   private final static String[] EXTRA_CONFIG_FIELDS = {Tables.EXTRA_CONFIG_COLUMNS.ID,
-      Tables.EXTRA_CONFIG_COLUMNS.INPUT_TYPE, Tables.EXTRA_CONFIG_COLUMNS.INPUT_OPTION,
-      Tables.EXTRA_CONFIG_COLUMNS.COND, Tables.EXTRA_CONFIG_COLUMNS.VALUE,
+      Tables.EXTRA_CONFIG_COLUMNS.INPUT_TYPE, Tables.EXTRA_CONFIG_COLUMNS.COND, Tables.EXTRA_CONFIG_COLUMNS.VALUE,
       Tables.EXTRA_CONFIG_COLUMNS.REF_EXTRA_CONFIG_ID, Tables.EXTRA_CONFIG_COLUMNS.EXTRACTOR_TYPE,
       Tables.EXTRA_CONFIG_COLUMNS.TRANSFORM_TYPE, Tables.EXTRA_CONFIG_COLUMNS.PROP_ID,
       Tables.EXTRA_CONFIG_COLUMNS.NODE_ID, Tables.EXTRA_CONFIG_COLUMNS.RULE_ID};
@@ -54,7 +53,6 @@ public class ExtraConfigDaoImpl extends AbstractDao implements ExtraConfigDao {
   public long insert(ExtraConfig extraConfig) {
     Map<String,Object> data = new HashMap<>();
     data.put(Tables.EXTRA_CONFIG_COLUMNS.INPUT_TYPE, extraConfig.getInputType().name());
-    data.put(Tables.EXTRA_CONFIG_COLUMNS.INPUT_OPTION, extraConfig.getInputOption());
     data.put(Tables.EXTRA_CONFIG_COLUMNS.COND, extraConfig.getCond());
     data.put(Tables.EXTRA_CONFIG_COLUMNS.VALUE, extraConfig.getValue());
     data.put(Tables.EXTRA_CONFIG_COLUMNS.REF_EXTRA_CONFIG_ID, extraConfig.getRefExtraConfigId());
@@ -71,7 +69,6 @@ public class ExtraConfigDaoImpl extends AbstractDao implements ExtraConfigDao {
   public void update(ExtraConfig extraConfig) {
     Map<String,Object> data = new HashMap<>();
     data.put(Tables.EXTRA_CONFIG_COLUMNS.INPUT_TYPE, extraConfig.getInputType().name());
-    data.put(Tables.EXTRA_CONFIG_COLUMNS.INPUT_OPTION, extraConfig.getInputOption());
     data.put(Tables.EXTRA_CONFIG_COLUMNS.COND, extraConfig.getCond());
     data.put(Tables.EXTRA_CONFIG_COLUMNS.VALUE, extraConfig.getValue());
     data.put(Tables.EXTRA_CONFIG_COLUMNS.REF_EXTRA_CONFIG_ID, extraConfig.getRefExtraConfigId());

@@ -17,7 +17,7 @@ public class NodeResult {
 
   private Map<String,String> forms;
 
-  private Map<String, String> failures;
+  private Map<String,String> failures;
 
   public NodeResult() {
     this.data = new HashMap<>();
@@ -26,35 +26,35 @@ public class NodeResult {
     this.failures = new HashMap<>();
   }
 
-  public Map<String, Object> getData() {
+  public Map<String,Object> getData() {
     return data;
   }
 
-  public void setData(Map<String, Object> data) {
+  public void setData(Map<String,Object> data) {
     this.data = data;
   }
 
-  public Map<String, String> getHeaders() {
+  public Map<String,String> getHeaders() {
     return headers;
   }
 
-  public void setHeaders(Map<String, String> headers) {
+  public void setHeaders(Map<String,String> headers) {
     this.headers = headers;
   }
 
-  public Map<String, String> getForms() {
+  public Map<String,String> getForms() {
     return forms;
   }
 
-  public void setForms(Map<String, String> forms) {
+  public void setForms(Map<String,String> forms) {
     this.forms = forms;
   }
 
-  public Map<String, String> getFailures() {
+  public Map<String,String> getFailures() {
     return failures;
   }
 
-  public void setFailures(Map<String, String> failures) {
+  public void setFailures(Map<String,String> failures) {
     this.failures = failures;
   }
 

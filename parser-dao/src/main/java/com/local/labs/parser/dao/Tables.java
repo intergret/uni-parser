@@ -44,7 +44,6 @@ public class Tables {
   public static final class EXTRA_CONFIG_COLUMNS {
     public static final String ID = "id";
     public static final String INPUT_TYPE = "inputType";
-    public static final String INPUT_OPTION = "inputOption";
     public static final String COND = "cond";
     public static final String VALUE = "value";
     public static final String REF_EXTRA_CONFIG_ID = "refExtraConfigId";

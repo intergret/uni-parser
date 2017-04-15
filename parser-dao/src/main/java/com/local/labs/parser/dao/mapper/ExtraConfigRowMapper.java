@@ -15,7 +15,6 @@ public class ExtraConfigRowMapper implements RowMapper<ExtraConfig> {
     ExtraConfig config = new ExtraConfig();
     config.setId(rs.getLong(Tables.EXTRA_CONFIG_COLUMNS.ID));
     config.setInputType(ExtraConfig.ExtractorInput.valueOf(rs.getString(Tables.EXTRA_CONFIG_COLUMNS.INPUT_TYPE)));
-    config.setInputOption(rs.getString(Tables.EXTRA_CONFIG_COLUMNS.INPUT_OPTION));
     config.setCond(rs.getString(Tables.EXTRA_CONFIG_COLUMNS.COND));
     config.setValue(rs.getString(Tables.EXTRA_CONFIG_COLUMNS.VALUE));
     config.setRefExtraConfigId(rs.getLong(Tables.EXTRA_CONFIG_COLUMNS.REF_EXTRA_CONFIG_ID));

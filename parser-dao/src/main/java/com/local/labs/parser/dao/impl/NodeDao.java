@@ -7,9 +7,9 @@ import com.local.labs.parser.common.model.parser.rule.Node;
 
 public interface NodeDao {
 
-  boolean exists(Map<String, Object> where);
+  boolean exists(Map<String,Object> where);
 
-  int delete(Map<String, Object> where);
+  int delete(Map<String,Object> where);
 
   List<Node> listByRule(Long ruleId);
 

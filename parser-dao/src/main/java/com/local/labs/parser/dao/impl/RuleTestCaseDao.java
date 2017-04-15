@@ -6,7 +6,7 @@ import com.local.labs.parser.common.model.parser.rule.RuleTestCase;
 
 public interface RuleTestCaseDao {
 
-  int delete(Map<String, Object> where);
+  int delete(Map<String,Object> where);
 
   RuleTestCase get(Long ruleId);
 

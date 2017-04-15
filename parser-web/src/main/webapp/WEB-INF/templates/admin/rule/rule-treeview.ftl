@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <title>通用爬虫</title>
+    <title>通用解析</title>
 </head>
 
 <style>

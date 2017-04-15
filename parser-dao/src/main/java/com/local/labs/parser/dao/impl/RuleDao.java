@@ -11,17 +11,17 @@ public interface RuleDao {
 
   void update(Rule rule);
 
-  boolean exists(Map<String, Object> where);
+  boolean exists(Map<String,Object> where);
 
-  int delete(Map<String, Object> where);
+  int delete(Map<String,Object> where);
 
   int delete(long id);
 
   List<Rule> getAll();
 
-  List<Rule> getRules(Map<String, Object> where);
+  List<Rule> getRules(Map<String,Object> where);
 
-  List<Rule> getRules(Map<String, Object> where, List<String> tails);
+  List<Rule> getRules(Map<String,Object> where, List<String> tails);
 
   List<Rule> getAll(Integer pageIndexNum, Integer pageSize);
 

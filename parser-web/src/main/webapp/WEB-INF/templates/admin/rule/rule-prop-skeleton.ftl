@@ -79,10 +79,6 @@
                             <td>${nodeExtraConfig.inputType!""}</td>
                         </tr>
                         <tr>
-                            <td>输入选项(inputOption):</td>
-                            <td>${nodeExtraConfig.inputOption!""}</td>
-                        </tr>
-                        <tr>
                             <td>条件(condition):</td>
                             <td>${nodeExtraConfig.cond!""}</td>
                         </tr>

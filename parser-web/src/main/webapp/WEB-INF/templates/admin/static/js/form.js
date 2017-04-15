@@ -107,11 +107,6 @@ function activateNodeHelp() {
     });
     $('.inputType').tooltip('toggle');
 
-    $(".inputOption").tooltip({
-        title: '仅输入类型不为DEFAULT的情况下需要填写'
-    });
-    $('.inputOption').tooltip('toggle');
-
     $(".condition").tooltip({
         title: '解释器的条件'
     });
@@ -188,11 +183,6 @@ function activateExtraConfigHelp() {
         title: '默认为空则上文的输出即为当前的输入，例如node的输出即为其下各个prop的输入，前置ExtraConfig的输出即为当前ExtraConfig的输入等'
     });
     $('.inputType').tooltip('toggle');
-
-    $(".inputOption").tooltip({
-        title: '仅输入类型不为DEFAULT的情况下需要填写'
-    });
-    $('.inputOption').tooltip('toggle');
 
     $(".transformType").tooltip({
         placement : 'left',

@@ -1,25 +1,12 @@
 package com.local.labs.parser.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.util.UrlUtils;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.local.labs.parser.common.model.State;
 import com.local.labs.parser.common.model.parser.PageType;
@@ -34,6 +21,17 @@ import com.local.labs.parser.service.PropService;
 import com.local.labs.parser.service.RuleService;
 import com.local.labs.parser.web.consts.PageConst;
 import com.local.labs.parser.web.consts.Pagination;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.util.UrlUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Author: Xing Wang <wangxing.bjtu@gmail.com>
@@ -209,7 +207,6 @@ public class RuleController {
   @RequestMapping(value = "/rule/node/", method = RequestMethod.POST)
   public ModelAndView addNodeAction(final ModelMap model,
       @RequestParam(value = "inputType", required = false, defaultValue = "DEFAULT") final ExtraConfig.ExtractorInput inputType,
-      @RequestParam(value = "inputOption", required = false, defaultValue = "") final String inputOption,
       @RequestParam(value = "cond", required = false, defaultValue = "") final String cond,
       @RequestParam(value = "value", required = false, defaultValue = "") final String value,
       @RequestParam(value = "extractorType", required = false, defaultValue = "") final String extractorType,
@@ -220,7 +217,6 @@ public class RuleController {
       @RequestParam(value = "ruleId", required = true) final Long ruleId) {
     ExtraConfig extraConfig = new ExtraConfig();
     extraConfig.setInputType(inputType);
-    extraConfig.setInputOption(inputOption);
     extraConfig.setValue(value);
     extraConfig.setCond(cond);
     extraConfig.setExtractorType(ExtraConfig.ExtractorType.valueOf(extractorType));
@@ -284,7 +280,6 @@ public class RuleController {
       @RequestParam(value = "nodeType", required = false, defaultValue = "") final String nodeType,
       @RequestParam(value = "parentNodeId", required = false, defaultValue = "0") final Long parentNodeId,
       @RequestParam(value = "inputType", required = false, defaultValue = "DEFAULT") final ExtraConfig.ExtractorInput inputType,
-      @RequestParam(value = "inputOption", required = false, defaultValue = "") final String inputOption,
       @RequestParam(value = "condition", required = false, defaultValue = "") final String cond,
       @RequestParam(value = "valueStr", required = false, defaultValue = "") final String value,
       @RequestParam(value = "extractorType", required = false, defaultValue = "") final String extractorType,
@@ -303,7 +298,6 @@ public class RuleController {
 
     ExtraConfig extraConfig = extraConfigService.get(node.getExtraConfigId());
     extraConfig.setInputType(inputType);
-    extraConfig.setInputOption(inputOption);
     extraConfig.setCond(cond);
     extraConfig.setValue(value);
     extraConfig.setExtractorType(ExtraConfig.ExtractorType.valueOf(extractorType));
@@ -435,7 +429,6 @@ public class RuleController {
   @RequestMapping(value = "/rule/extraConfig", method = RequestMethod.POST)
   public ModelAndView addExtraConfigAction(final ModelMap model,
       @RequestParam(value = "inputType", required = false, defaultValue = "DEFAULT") final ExtraConfig.ExtractorInput inputType,
-      @RequestParam(value = "inputOption", required = false, defaultValue = "") final String inputOption,
       @RequestParam(value = "condition", required = false, defaultValue = "") final String cond,
       @RequestParam(value = "valueStr", required = false, defaultValue = "") final String value,
       @RequestParam(value = "extractorType", required = false, defaultValue = "") final String extractorType,
@@ -447,7 +440,6 @@ public class RuleController {
       @RequestParam(value = "redirectPage", required = false, defaultValue = "prop") final String redirectPage) {
     ExtraConfig extraConfig = new ExtraConfig();
     extraConfig.setInputType(inputType);
-    extraConfig.setInputOption(inputOption);
     extraConfig.setCond(cond);
     extraConfig.setValue(value);
     extraConfig.setExtractorType(ExtraConfig.ExtractorType.valueOf(extractorType));
@@ -483,7 +475,6 @@ public class RuleController {
   @RequestMapping(value = "/rule/extraConfig/{extraConfigId:.+}", method = RequestMethod.PUT)
   public ModelAndView updateExtraConfigAction(
       @RequestParam(value = "inputType", required = false, defaultValue = "DEFAULT") final ExtraConfig.ExtractorInput inputType,
-      @RequestParam(value = "inputOption", required = false, defaultValue = "") final String inputOption,
       @RequestParam(value = "condition", required = true, defaultValue = "") final String cond,
       @RequestParam(value = "valueStr", required = true, defaultValue = "") final String value,
       @RequestParam(value = "extractorType", required = true, defaultValue = "") final String extractorType,
@@ -505,7 +496,6 @@ public class RuleController {
     extraConfig.setNodeId(nodeId);
     extraConfig.setRuleId(ruleId);
     extraConfig.setInputType(inputType);
-    extraConfig.setInputOption(inputOption);
     extraConfig.setCond(cond);
     extraConfig.setValue(value);
     extraConfig.setExtractorType(ExtraConfig.ExtractorType.valueOf(extractorType));

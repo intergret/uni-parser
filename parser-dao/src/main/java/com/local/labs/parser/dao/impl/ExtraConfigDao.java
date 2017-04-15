@@ -7,9 +7,9 @@ import com.local.labs.parser.common.model.parser.rule.ExtraConfig;
 
 public interface ExtraConfigDao {
 
-  boolean exists(Map<String, Object> where);
+  boolean exists(Map<String,Object> where);
 
-  int delete(Map<String, Object> where);
+  int delete(Map<String,Object> where);
 
   ExtraConfig get(Long id);
 

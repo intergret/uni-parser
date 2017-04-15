@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum PageType {
-  LIST, DETAIL, BINARY, SEED;
+  LIST, DETAIL, BINARY;
 
   public static List<String> list() {
     List<String> result = new ArrayList<>();

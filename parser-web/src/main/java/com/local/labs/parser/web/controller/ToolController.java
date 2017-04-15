@@ -2,18 +2,6 @@ package com.local.labs.parser.web.controller;
 
 import java.io.IOException;
 
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.local.labs.parser.common.model.crawler.HttpMethod;
 import com.local.labs.parser.common.model.parser.ParseData;
 import com.local.labs.parser.common.model.parser.ParserTask;
@@ -23,6 +11,15 @@ import com.local.labs.parser.common.serializer.JsonSerializer;
 import com.local.labs.parser.engine.core.TextParser;
 import com.local.labs.parser.service.RuleService;
 import com.local.labs.parser.web.consts.PageConst;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Author: Xing Wang <wangxing.bjtu@gmail.com>
@@ -31,8 +28,6 @@ import com.local.labs.parser.web.consts.PageConst;
 @Controller
 @RequestMapping("/")
 public class ToolController {
-
-  private static final Logger LOG = LoggerFactory.getLogger(ToolController.class);
 
   @Autowired
   private JsonSerializer serializer;

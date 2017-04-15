@@ -9,8 +9,6 @@ public class ExtraConfig {
 
   private ExtractorInput inputType;
 
-  private String inputOption;
-
   private String cond;
 
   private String value;
@@ -41,14 +39,6 @@ public class ExtraConfig {
 
   public void setInputType(ExtractorInput inputType) {
     this.inputType = inputType;
-  }
-
-  public String getInputOption() {
-    return inputOption;
-  }
-
-  public void setInputOption(String inputOption) {
-    this.inputOption = inputOption;
   }
 
   public String getCond() {

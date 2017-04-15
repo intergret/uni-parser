@@ -112,6 +112,7 @@
 
     <properties>
         <java.version>1.7</java.version>
+        <env>debug</env>
 
         <spring.version>4.3.5.RELEASE</spring.version>
         <parser.version>1.0-SNAPSHOT</parser.version>

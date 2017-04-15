@@ -12,18 +12,18 @@
     <import resource="classpath:/applicationContext-service.xml"/>
 
     <bean id="kafkaZookeeperAddress" class="java.lang.String">
-        <constructor-arg value="127.0.0.1:2181"/>
+        <constructor-arg value="${kafka.zk}"/>
     </bean>
 
     <bean id="kafkaBrokers" class="java.lang.String">
-        <constructor-arg value="127.0.0.1:9092"/>
+        <constructor-arg value="${kafka.broker}"/>
     </bean>
 
     <bean id="parserGroup" class="java.lang.String">
-        <constructor-arg value="parserGroup"/>
+        <constructor-arg value="${parser.kafka.group}"/>
     </bean>
 
     <bean id="parserTopic" class="java.lang.String">
-        <constructor-arg value="parserTopic"/>
+        <constructor-arg value="${parser.kafka.topic}"/>
     </bean>
 </beans>

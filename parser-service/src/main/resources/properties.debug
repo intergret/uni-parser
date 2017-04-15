@@ -1,0 +1,6 @@
+# redis
+redis.host=localhost
+redis.max.total=3
+redis.max.idle=3
+redis.max.wait.millis=1000
+redis.test.on.borrow=true

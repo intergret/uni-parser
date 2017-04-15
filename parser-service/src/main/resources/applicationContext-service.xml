@@ -11,15 +11,15 @@
     <import resource="classpath:/applicationContext-dao.xml"/>
 
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxTotal" value="3"/>
-        <property name="maxIdle" value="1"/>
-        <property name="maxWaitMillis" value="1000"/>
-        <property name="testOnBorrow" value="true"/>
+        <property name="maxTotal" value="${redis.max.total}"/>
+        <property name="maxIdle" value="${redis.max.idle}"/>
+        <property name="maxWaitMillis" value="${redis.max.wait.millis}"/>
+        <property name="testOnBorrow" value="${redis.test.on.borrow}"/>
     </bean>
 
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
         <constructor-arg name="poolConfig" ref="jedisPoolConfig"/>
-        <constructor-arg name="host" value="localhost"/>
+        <constructor-arg name="host" value="${redis.host}"/>
     </bean>
 
     <bean id="redisTemplate" class="com.local.labs.parser.common.redis.RedisTemplate">

@@ -64,7 +64,7 @@
                 <td>${node.nodeType!""}</td>
             </tr>
             <tr>
-                <td>父节点(parentNode):</td>
+                <td>父节点ID(parentNode):</td>
                 <td>${node.parentNode!""}</td>
             </tr>
             <tr>
@@ -143,18 +143,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="scopeType">可见范围(scopeType):</span></td>
-                    <td>
-                        <select name="scopeType">
-                        <#list scopeTypeStrList as scopeTypeItem>
-                            <option value='${scopeTypeItem}'
-                                <#if (prop.scopeType?? && prop.scopeType == "${scopeTypeItem}") >selected="selected"</#if>>${scopeTypeItem}
-                            </option>
-                        </#list>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
                     <td><span class="resultType">导出类型(resultType):</span></td>
                     <td>
                         <select id="resultType" name="resultType" onchange="toggleLinkSetting();">
@@ -182,10 +170,6 @@
                                         </#list>
                                     </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><span class="refer">引用页(refer):</span></td>
-                                <td><input type="text" name="refer" value='${prop.refer!""}'></td>
                             </tr>
                             <tr>
                                 <td><span class="parserType">解析类型(parserType):</span></td>

@@ -63,7 +63,7 @@
                 <td>${node.label!""}</td>
             </tr>
             <tr>
-                <td>父节点(parentNode):</td>
+                <td>父节点ID(parentNode):</td>
                 <td>${node.parentNode!""}</td>
             </tr>
             <tr>
@@ -113,9 +113,7 @@
             <thead>
             <td>id</td>
             <td>标签</td>
-            <td>引用页</td>
             <td>导出类型</td>
-            <td>可见范围</td>
             <th>是否必须</th>
             <td>是否为多个</td>
             <th>查看</th>
@@ -124,9 +122,7 @@
                 <tr>
                     <td>${prop.id}</td>
                     <td>${prop.label!""}</td>
-                    <td>${prop.refer!""}</td>
                     <td>${prop.resultType!""}</td>
-                    <td>${prop.scopeType!""}</td>
                     <td>${isRequiredStrList[prop_index]}</td>
                     <td>${isMultiplyStrList[prop_index]}</td>
                     <td>
@@ -175,18 +171,6 @@
                         <select name="isMultiply">
                             <option value="0" selected="selected">否</option>
                             <option value="1">是</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><span class="scopeType">可见范围(scopeType):</span></td>
-                    <td>
-                        <select name="scopeType">
-                        <#list scopeTypeStrList as scopeTypeStr>
-                            <option value='${scopeTypeStr}'
-                                <#if ('${scopeTypeStr}'?? && '${scopeTypeStr}' == "LOCAL") >selected="selected"</#if>>${scopeTypeStr}
-                            </option>
-                        </#list>
                         </select>
                     </td>
                 </tr>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum HttpMethod {
-  GET, POST, HEAD, PUT;
+  GET, POST;
 
   public static List<String> list() {
     List<String> result = new ArrayList<>();

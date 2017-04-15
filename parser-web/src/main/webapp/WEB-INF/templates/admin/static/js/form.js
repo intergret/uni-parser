@@ -98,7 +98,7 @@ function activateNodeHelp() {
     $('.nodeType').tooltip('toggle');
 
     $(".parentNode").tooltip({
-        title: '所属的上层父节点，顶层Node选择0'
+        title: '所属的上层父节点ID，顶层Node选择0'
     });
     $('.parentNode').tooltip('toggle');
 
@@ -148,12 +148,6 @@ function activatePropHelp() {
         title: 'Prop的值是否有并列的多个'
     });
     $('.isMultiply').tooltip('toggle');
-
-    $(".scopeType").tooltip({
-        placement : 'left',
-        title: 'Prop的值的可见范围。默认为local则Prop的值只在当前的node里可见；设为Node则在当前规则的其他的node里也可见；设为Rule则在其他规则里也可见，会将改值传递给下一个规则'
-    });
-    $('.scopeType').tooltip('toggle');
 
     $(".resultType").tooltip({
         placement : 'bottom',

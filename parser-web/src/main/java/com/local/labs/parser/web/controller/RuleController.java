@@ -334,7 +334,6 @@ public class RuleController {
       @RequestParam(value = "resultType", required = false) final Prop.ResultType resultType,
       @RequestParam(value = "httpMethod", required = false) final String httpMethod,
       @RequestParam(value = "parserType", required = false) final ParserType parserType,
-      @RequestParam(value = "scopeType", required = false) final Prop.ScopeType scopeType,
       @RequestParam(value = "ruleId", required = true) final Long ruleId,
       @RequestParam(value = "nodeId", required = true) final Long nodeId) {
     Prop prop = new Prop();
@@ -343,7 +342,6 @@ public class RuleController {
     prop.setIsRequired(isRequired);
     prop.setResultType(resultType);
     prop.setHttpMethod(httpMethod);
-    prop.setScopeType(scopeType);
     prop.setParserType(parserType);
     prop.setNodeId(nodeId);
     prop.setRuleId(ruleId);
@@ -387,7 +385,6 @@ public class RuleController {
       @RequestParam(value = "resultType", required = false, defaultValue = "") final Prop.ResultType resultType,
       @RequestParam(value = "httpMethod", required = false, defaultValue = "") final String httpMethod,
       @RequestParam(value = "parserType", required = false, defaultValue = "") final ParserType parserType,
-      @RequestParam(value = "scopeType", required = false, defaultValue = "") final Prop.ScopeType scopeType,
       @RequestParam(value = "nodeId", required = true) final Long nodeId,
       @RequestParam(value = "propId", required = true) final Long propId,
       @RequestParam(value = "ruleId", required = true) final Long ruleId,
@@ -403,7 +400,6 @@ public class RuleController {
     prop.setIsRequired(isRequired);
     prop.setResultType(resultType);
     prop.setHttpMethod(httpMethod);
-    prop.setScopeType(scopeType);
     prop.setParserType(parserType);
     prop.setNodeId(nodeId);
     prop.setRuleId(ruleId);
@@ -538,6 +534,7 @@ public class RuleController {
     ExtraConfig nodeExtraConfig = extraConfigService.get(node.getExtraConfigId());
     List<Node> nodeList = nodeService.listByRule(node.getRuleId());
     List<String> parentNodeStrList = new ArrayList<>();
+    parentNodeStrList.add("0");
     for (Node nodeItem : nodeList) {
       if (!nodeItem.getId().equals(node.getId())) {
         parentNodeStrList.add(String.valueOf(nodeItem.getId()));
@@ -581,7 +578,6 @@ public class RuleController {
     model.put("resultTypeStrList", PageConst.RESULT_TYPE_LIST);
     model.put("httpMethodStrList", PageConst.HTTP_METHOD_LIST);
     model.put("parserTypeStrList", PageConst.PARSER_TYPE_LIST);
-    model.put("scopeTypeStrList", PageConst.SCOPE_TYPE_LIST);
     return new ModelAndView("/admin/rule/rule-prop-detail", model);
   }
 
@@ -621,6 +617,7 @@ public class RuleController {
     Rule rule = ruleService.get(ruleId);
     List<Node> nodeList = nodeService.listByRule(rule.getId());
     List<String> parentNodeStrList = new ArrayList<>();
+    parentNodeStrList.add("0");
     for (Node nodeItem : nodeList) {
       parentNodeStrList.add(String.valueOf(nodeItem.getId()));
     }
@@ -651,7 +648,6 @@ public class RuleController {
     model.put("resultTypeStrList", PageConst.RESULT_TYPE_LIST);
     model.put("httpMethodStrList", PageConst.HTTP_METHOD_LIST);
     model.put("parserTypeStrList", PageConst.PARSER_TYPE_LIST);
-    model.put("scopeTypeStrList", PageConst.SCOPE_TYPE_LIST);
     return new ModelAndView("/admin/rule/rule-prop-skeleton", model);
   }
 

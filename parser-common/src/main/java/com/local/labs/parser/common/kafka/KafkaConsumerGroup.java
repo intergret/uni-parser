@@ -94,7 +94,7 @@ public class KafkaConsumerGroup<T extends AbstractKafkaConsumer> {
         paramValues.add(stream);
         paramValues.add(threadSeq);
         paramValues.addAll(basicParamValues);
-        executor.submit((T) constructor.newInstance(paramValues.toArray()));
+        executor.execute((T) constructor.newInstance(paramValues.toArray()));
         threadSeq++;
       }
     } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {

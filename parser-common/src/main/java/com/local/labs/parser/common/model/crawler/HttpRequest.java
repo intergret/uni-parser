@@ -8,11 +8,7 @@ public class HttpRequest {
 
   private String referer;
 
-  private Map<String,String> params;
-
   private Map<String,String> forms;
-
-  private Map<String,String> headers;
 
   private HttpMethod httpMethod;
 
@@ -25,11 +21,6 @@ public class HttpRequest {
   }
 
   public HttpRequest(String url, String referer) {
-    this.url = url;
-    this.referer = referer;
-  }
-
-  public HttpRequest(String url, String referer, String refererInfo) {
     this.url = url;
     this.referer = referer;
   }
@@ -50,28 +41,12 @@ public class HttpRequest {
     this.referer = referer;
   }
 
-  public Map<String,String> getParams() {
-    return params;
-  }
-
-  public void setParams(Map<String,String> params) {
-    this.params = params;
-  }
-
   public Map<String,String> getForms() {
     return forms;
   }
 
   public void setForms(Map<String,String> forms) {
     this.forms = forms;
-  }
-
-  public Map<String,String> getHeaders() {
-    return headers;
-  }
-
-  public void setHeaders(Map<String,String> headers) {
-    this.headers = headers;
   }
 
   public HttpMethod getHttpMethod() {

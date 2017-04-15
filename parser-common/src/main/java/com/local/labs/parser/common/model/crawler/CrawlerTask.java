@@ -9,17 +9,14 @@ public class CrawlerTask {
 
   private String siteName;
 
-  private QueueType queueType;
-
   private PageType pageType;
 
   private List<HttpRequest> httpRequests;
 
   public CrawlerTask() {}
 
-  public CrawlerTask(String siteName, QueueType queueType, PageType pageType) {
+  public CrawlerTask(String siteName, PageType pageType) {
     this.siteName = siteName;
-    this.queueType = queueType;
     this.pageType = pageType;
   }
 
@@ -44,14 +41,6 @@ public class CrawlerTask {
 
   public void setSiteName(String siteName) {
     this.siteName = siteName;
-  }
-
-  public QueueType getQueueType() {
-    return queueType;
-  }
-
-  public void setQueueType(QueueType queueType) {
-    this.queueType = queueType;
   }
 
   public PageType getPageType() {

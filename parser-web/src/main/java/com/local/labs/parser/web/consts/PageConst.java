@@ -29,5 +29,4 @@ public class PageConst {
 
   public static final List<String> RESULT_TYPE_LIST = Prop.ResultType.list();
 
-  public static final List<String> SCOPE_TYPE_LIST = Prop.ScopeType.list();
 }

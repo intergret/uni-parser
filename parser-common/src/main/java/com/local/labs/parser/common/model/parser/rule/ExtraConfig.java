@@ -116,7 +116,7 @@ public class ExtraConfig {
   }
 
   public enum ExtractorInput {
-    DEFAULT, URL, REFER;
+    DEFAULT, URL;
 
     public static List<String> list() {
       List<String> result = new ArrayList<>();
@@ -129,7 +129,7 @@ public class ExtraConfig {
   }
 
   public enum ExtractorType {
-    HTML, JSON, XML, REGEX, CONST, TEMPLATE, TIME, MAP, UNIT, NEXTPAGE;
+    HTML, JSON, XML;
 
     public static List<String> list() {
       List<String> result = new ArrayList<>();

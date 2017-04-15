@@ -15,8 +15,6 @@ public class Prop {
 
   private Boolean isMultiply;
 
-  private ScopeType scopeType;
-
   private ResultType resultType;
 
   private String httpMethod;
@@ -99,35 +97,14 @@ public class Prop {
     this.ruleId = ruleId;
   }
 
-  public ScopeType getScopeType() {
-    return scopeType;
-  }
-
-  public void setScopeType(ScopeType scopeType) {
-    this.scopeType = scopeType;
-  }
-
   public enum ResultType {
-    TEXT, LINK, FORMITEM, HEADITEM;
+    TEXT, LINK, FORMITEM;
 
     public static List<String> list() {
       List<String> result = new ArrayList<>();
       Prop.ResultType[] array = Prop.ResultType.values();
       for (Prop.ResultType r : array) {
         result.add(r.name());
-      }
-      return result;
-    }
-  }
-
-  public enum ScopeType {
-    LOCAL, NODE, RULE;
-
-    public static List<String> list() {
-      List<String> result = new ArrayList<>();
-      Prop.ScopeType[] array = Prop.ScopeType.values();
-      for (Prop.ScopeType s : array) {
-        result.add(s.name());
       }
       return result;
     }

@@ -5,17 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.local.labs.parser.common.model.crawler.CrawlerTask;
 import com.local.labs.parser.common.model.crawler.HttpMethod;
 import com.local.labs.parser.common.model.crawler.HttpRequest;
-import com.local.labs.parser.common.model.crawler.QueueType;
 import com.local.labs.parser.common.model.parser.NodeResult;
 import com.local.labs.parser.common.model.parser.ParseData;
 import com.local.labs.parser.common.model.parser.ParserTask;
@@ -28,6 +20,12 @@ import com.local.labs.parser.common.model.parser.rule.PropTree;
 import com.local.labs.parser.common.model.parser.rule.RuleTree;
 import com.local.labs.parser.engine.extractor.Extractor;
 import com.local.labs.parser.engine.extractor.ExtractorLoader;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Author: Xing Wang <wangxing.bjtu@gmail.com>
@@ -106,8 +104,6 @@ public class RuleWalker {
       ExtraConfig.ExtractorInput extractorInput = config.getInputType();
       if (extractorInput == ExtraConfig.ExtractorInput.URL) {
         input = task.getUrl();
-      } else if (extractorInput == ExtraConfig.ExtractorInput.REFER) {
-        input = task.getRefer();
       }
     }
     return input;
@@ -239,29 +235,27 @@ public class RuleWalker {
   }
 
   public void buildLinkResult(ParserTask parseTask, ParseData parseData, NodeResult nodeResult, List<PropResult> propResults) {
-    for (PropResult result : propResults) {
-      Prop.ResultType resultType = result.getProp().getResultType();
+    for (PropResult propResult : propResults) {
+      Prop.ResultType resultType = propResult.getProp().getResultType();
       if (resultType != Prop.ResultType.LINK) {
         continue;
       }
 
-      String url = (String) result.getValue();
+      String url = (String) propResult.getValue();
       if (StringUtils.isEmpty(url)) {
         continue;
       }
 
       HttpRequest httpRequest = new HttpRequest(url);
       httpRequest.setReferer(parseTask.getUrl());
-      httpRequest.setHeaders(nodeResult.getHeaders());
       httpRequest.setForms(nodeResult.getForms());
-      String httpMethodStr = result.getProp().getHttpMethod();
+      String httpMethodStr = propResult.getProp().getHttpMethod();
       httpRequest.setHttpMethod(HttpMethod.valueOf(httpMethodStr));
 
       CrawlerTask crawlerTask = new CrawlerTask();
       crawlerTask.addHttpRequest(httpRequest);
       crawlerTask.setSiteName(parseTask.getSiteName());
       crawlerTask.setPageType(parseData.getRule().getPageType());
-      crawlerTask.setQueueType(QueueType.GENERAL);
       parseData.getCrawlerTasks().add(crawlerTask);
     }
   }

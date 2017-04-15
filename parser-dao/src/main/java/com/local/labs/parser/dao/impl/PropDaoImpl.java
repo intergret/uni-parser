@@ -24,7 +24,7 @@ public class PropDaoImpl extends AbstractDao implements PropDao {
 
   private final static String[] PROP_FIELDS = {Tables.PROP_COLUMNS.ID, Tables.PROP_COLUMNS.LABEL,
       Tables.PROP_COLUMNS.IS_REQUIRED, Tables.PROP_COLUMNS.IS_MULTIPLY, Tables.PROP_COLUMNS.RESULT_TYPE,
-      Tables.PROP_COLUMNS.HTTP_METHOD, Tables.PROP_COLUMNS.PARSER_TYPE, Tables.PROP_COLUMNS.SCOPE_TYPE,
+      Tables.PROP_COLUMNS.HTTP_METHOD, Tables.PROP_COLUMNS.PARSER_TYPE,
       Tables.PROP_COLUMNS.NODE_ID, Tables.PROP_COLUMNS.RULE_ID};
 
   private final static String DEFAULT_QUERY_PREFIX;
@@ -69,7 +69,6 @@ public class PropDaoImpl extends AbstractDao implements PropDao {
     data.put(Tables.PROP_COLUMNS.RESULT_TYPE, prop.getResultType().name());
     data.put(Tables.PROP_COLUMNS.HTTP_METHOD, prop.getHttpMethod());
     data.put(Tables.PROP_COLUMNS.PARSER_TYPE, prop.getParserType().name());
-    data.put(Tables.PROP_COLUMNS.SCOPE_TYPE, prop.getScopeType().name());
     data.put(Tables.PROP_COLUMNS.NODE_ID, prop.getNodeId());
     data.put(Tables.PROP_COLUMNS.RULE_ID, prop.getRuleId());
     if (prop.getId() != null) {
@@ -88,7 +87,6 @@ public class PropDaoImpl extends AbstractDao implements PropDao {
     data.put(Tables.PROP_COLUMNS.RESULT_TYPE, prop.getResultType().name());
     data.put(Tables.PROP_COLUMNS.HTTP_METHOD, prop.getHttpMethod());
     data.put(Tables.PROP_COLUMNS.PARSER_TYPE, prop.getParserType().name());
-    data.put(Tables.PROP_COLUMNS.SCOPE_TYPE, prop.getScopeType().name());
     data.put(Tables.PROP_COLUMNS.NODE_ID, prop.getNodeId());
     data.put(Tables.PROP_COLUMNS.RULE_ID, prop.getRuleId());
     insert(data, false);

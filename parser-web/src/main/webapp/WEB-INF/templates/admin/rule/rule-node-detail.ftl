@@ -77,7 +77,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="parentNode">父节点(parentNode):</span></td>
+                    <td><span class="parentNode">父节点ID(parentNode):</span></td>
                     <td>
                         <select name="parentNodeId">
                         <#list parentNodeStrList as parentNodeStr>
@@ -183,11 +183,8 @@
                 <thead>
                 <tr>
                     <th>id</th>
-                    <th>粘合标记</th>
                     <th>标签</th>
-                    <th>引用页</th>
                     <th>导出类型</th>
-                    <th>可见范围</th>
                     <th>是否必须</th>
                     <th>是否为多个</th>
                     <th>查看</th>
@@ -197,11 +194,8 @@
                 <#list propList as prop>
                     <tr>
                         <td>${prop.id}</td>
-                        <td>${prop.glue!""}</td>
                         <td>${prop.label!""}</td>
-                        <td>${prop.refer!""}</td>
                         <td>${prop.resultType!""}</td>
-                        <td>${prop.scopeType!""}</td>
                         <td>${isRequiredStrList[prop_index]}</td>
                         <td>${isMultiplyStrList[prop_index]}</td>
                         <td>

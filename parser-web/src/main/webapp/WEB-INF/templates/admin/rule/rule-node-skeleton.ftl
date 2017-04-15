@@ -116,7 +116,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><span class="parentNode">父节点(parentNode):</span></td>
+                    <td><span class="parentNode">父节点ID(parentNode):</span></td>
                     <td>
                         <select name="parentNodeId">
                         <#list parentNodeStrList as parentNodeStr>

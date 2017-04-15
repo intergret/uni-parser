@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum ParserType {
-  HTML, XML, JSON;
+  HTML, XML, JSON, BINARY;
 
   public static List<String> list() {
     List<String> result = new ArrayList<>();

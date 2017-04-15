@@ -64,7 +64,7 @@
                 <td>${node.nodeType!""}</td>
             </tr>
             <tr>
-                <td>父节点(parentNode):</td>
+                <td>父节点ID(parentNode):</td>
                 <td>${node.parentNode!""}</td>
             </tr>
             <tr>
@@ -117,10 +117,6 @@
                 <td>${isMultiplyStr}</td>
             </tr>
             <tr>
-                <td>可见范围(scopeType):</td>
-                <td>${prop.scopeType!""}</td>
-            </tr>
-            <tr>
                 <td>导出类型(resultType):</td>
                 <td>${prop.resultType!""}</td>
             </tr>
@@ -131,10 +127,6 @@
                         <tr>
                             <td style="width:30%">请求方式(httpMethod):</td>
                             <td>${prop.httpMethod!""}</td>
-                        </tr>
-                        <tr>
-                            <td>引用页(refer):</td>
-                            <td>${prop.refer!""}</td>
                         </tr>
                         <tr>
                             <td>解析类型(parserType):</td>

@@ -21,7 +21,6 @@ public class PropRowMapper implements RowMapper<Prop> {
     prop.setResultType(Prop.ResultType.valueOf(rs.getString(Tables.PROP_COLUMNS.RESULT_TYPE).toUpperCase()));
     prop.setHttpMethod(rs.getString(Tables.PROP_COLUMNS.HTTP_METHOD));
     prop.setParserType(ParserType.valueOf(rs.getString(Tables.PROP_COLUMNS.PARSER_TYPE).toUpperCase()));
-    prop.setScopeType(Prop.ScopeType.valueOf(rs.getString(Tables.PROP_COLUMNS.SCOPE_TYPE).toUpperCase()));
     prop.setNodeId(rs.getLong(Tables.PROP_COLUMNS.NODE_ID));
     return prop;
   }

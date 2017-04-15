@@ -36,7 +36,6 @@ public class Tables {
     public static final String RESULT_TYPE = "resultType";
     public static final String HTTP_METHOD = "httpMethod";
     public static final String PARSER_TYPE = "parserType";
-    public static final String SCOPE_TYPE = "scopeType";
     public static final String NODE_ID = "nodeId";
     public static final String RULE_ID = "ruleId";
   }
